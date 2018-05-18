@@ -68,7 +68,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
         client.requestLocationUpdates(locationRequest, new LocationCallback(
 
-        ){
+        ) {
             @Override
             public void onLocationResult(LocationResult locationResult) {
                 super.onLocationResult(locationResult);
@@ -101,11 +101,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             @Override
             public View getInfoContents(Marker marker) {
-                View view = getLayoutInflater().inflate(R.layout.info_window,null);
-                TextView tv1 =view.findViewById(R.id.textView);
-                tv1.setText("tv1:"+marker.getTitle());
-                TextView tv2 =view.findViewById(R.id.textView2);
-                tv2.setText("Tv2: "+marker.getSnippet());
+                View view = getLayoutInflater().inflate(R.layout.info_window, null);
+                TextView tv1 = view.findViewById(R.id.textView);
+                tv1.setText("tv1:" + marker.getTitle());
+                TextView tv2 = view.findViewById(R.id.textView2);
+                tv2.setText("Tv2: " + marker.getSnippet());
                 return view;
             }
         });
@@ -160,7 +160,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 fusedLocationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
                     @Override
                     public void onComplete(@NonNull Task<Location> task) {
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             Location location2 = task.getResult();
                             Log.i("Location", location2.getLatitude() + " , " + location2.getLongitude());
                         }
